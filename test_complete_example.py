@@ -1,14 +1,14 @@
 import pytest
 
 
-# 被测类
+# Class under test
 class Calculator:
     def multiply(self, a, b):
         return a * b
 
     def divide(self, a, b):
         if b == 0:
-            raise ValueError("除数不能为零")
+            raise ValueError("The divisor cannot be zero")
         return a / b
 
 
@@ -31,7 +31,7 @@ def test_multiply(calc, a, b, result):
 def test_divide_by_zero(calc):
     with pytest.raises(ValueError) as exc_info:
         calc.divide(10, 0)
-    assert "除数不能为零" in str(exc_info.value)
+    assert "The divisor cannot be zero" in str(exc_info.value)
 
 
 # 标记测试

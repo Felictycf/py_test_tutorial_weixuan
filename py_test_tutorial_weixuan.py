@@ -2,7 +2,7 @@ import pytest
 
 def parse_int(s):
     if not s.isdigit():
-        raise ValueError("无效的数字字符串")
+        raise ValueError("Invalid numeric string")
     return int(s)
 
 def test_valid_input():
@@ -11,4 +11,4 @@ def test_valid_input():
 def test_invalid_input():
     with pytest.raises(ValueError) as exc_info:
         parse_int("foo")
-    assert "无效的数字字符串" in str(exc_info.value)
+    assert "Invalid numeric string" in str(exc_info.value)

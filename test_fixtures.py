@@ -2,9 +2,9 @@ import pytest
 
 @pytest.fixture
 def database():
-    print("\n--- 初始化数据库连接 ---")
+    print("\n--- Initializing a database connection ---")
     yield "db_connection"
-    print("\n--- 关闭数据库连接 ---")
+    print("\n--- Close database connection ---")
 
 def test_query(database):
     assert database == "db_connection"
