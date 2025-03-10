@@ -19,16 +19,19 @@ def calc():
 
 
 # 参数化测试
+# 这里就是填充参数的
 @pytest.mark.parametrize("a, b, result", [
     (3, 4, 12),
     (-2, 5, -10)
 ])
+# 用这个参数 就会吧 a,b 都填充到里面去
 def test_multiply(calc, a, b, result):
     assert calc.multiply(a, b) == result
 
 
 # 异常测试
 def test_divide_by_zero(calc):
+    # raisec 触发这个异常
     with pytest.raises(ValueError) as exc_info:
         calc.divide(10, 0)
     assert "The divisor cannot be zero" in str(exc_info.value)

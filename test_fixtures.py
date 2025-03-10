@@ -1,5 +1,5 @@
 import pytest
-
+# 这个我们要注意 这个 fixture 就是一个提前设置信息的装饰器
 @pytest.fixture
 def database():
     print("\n--- Initializing a database connection ---")
