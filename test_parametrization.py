@@ -10,7 +10,7 @@ def test_double(input, expected):
 
 @pytest.mark.parametrize("a, b, max_value", [
     (10, 20, 20),
-    (30, 15, 30),
+    (35, 15, 35),
     (-5, 5, 5)
 ])
 def test_max(a, b, max_value):
